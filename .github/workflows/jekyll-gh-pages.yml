@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x' # Update Node.js version to 18.x
+          node-version: '18.x'
 
       - name: Verify Node.js version
         run: node -v
@@ -33,12 +33,15 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --output-path=dist
+        run: npm run build -- --output-path=dist/coreui-free-angular-admin-template
+
+      - name: List output directory
+        run: ls -alh dist/coreui-free-angular-admin-template
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dist/coreui-free-angular-admin-template
 
   deploy:
     environment:
