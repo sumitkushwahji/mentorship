@@ -33,7 +33,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run build -- --output-path=dist/coreui-free-angular-admin-template --base-href /<REPO_NAME>/
+        run: npm run build -- --output-path=dist/coreui-free-angular-admin-template --base-href /<YOUR_REPOSITORY_NAME>/
 
       - name: List output directory
         run: ls -alh dist/coreui-free-angular-admin-template
